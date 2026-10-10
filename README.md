@@ -1,27 +1,31 @@
-# Image Gallery
 
-A responsive and interactive Image Gallery built using HTML5, CSS3, and JavaScript.
+# FAQ Accordion
+
+A responsive and interactive FAQ Accordion website built using HTML5, CSS3, and JavaScript.
 
 ## Features
-
-* Responsive image grid layout
-* Click an image to view it in a larger preview
-* Close the preview using the close button or Escape key
-* Smooth hover effects
-* Modern dark-themed design
+- 8 frequently asked questions
+- Expand and collapse answers on click
+- Only one answer open at a time
+- Smooth animations and hover effects
+- Modern dark-themed design
+- Responsive layout for mobile and desktop
 
 ## Technologies Used
-
-* HTML5
-* CSS3
-* JavaScript
+- HTML5
+- CSS3
+- JavaScript
 
 ## How to Run
-
 1. Download or clone this repository.
 2. Open `index.html` in your browser.
-3. Click any image to view the larger preview.
+3. Click any question to view its answer.
+
+## Project Files
+- `index.html` — Website structure and FAQ content
+- `style.css` — Styling and responsive design
+- `script.js` — Accordion functionality
+- `README.md` — Project documentation
 
 ## Author
-
 Yandrapati Nayana Sree
