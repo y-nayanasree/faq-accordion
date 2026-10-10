@@ -1,37 +1,22 @@
-const galleryImages = document.querySelectorAll(".gallery img");
-const lightbox = document.getElementById("lightbox");
-const previewImage = document.getElementById("preview-image");
-const closeButton = document.getElementById("close-btn");
 
-function openPreview(image) {
-    previewImage.src = image.src;
-    previewImage.alt = image.alt;
-    lightbox.hidden = false;
-    closeButton.focus();
-}
+const questions = document.querySelectorAll(".faq-question");
 
-function closePreview() {
-    lightbox.hidden = true;
-    previewImage.src = "";
-}
+questions.forEach((question) => {
+    question.addEventListener("click", () => {
+        const answer = question.nextElementSibling;
+        const isExpanded =
+            question.getAttribute("aria-expanded") === "true";
 
-galleryImages.forEach(function (image) {
-    image.addEventListener("click", function () {
-        openPreview(image);
+        // Close all answers first
+        questions.forEach((otherQuestion) => {
+            otherQuestion.setAttribute("aria-expanded", "false");
+            otherQuestion.nextElementSibling.hidden = true;
+        });
+
+        // Open the selected answer if it was closed
+        if (!isExpanded) {
+            question.setAttribute("aria-expanded", "true");
+            answer.hidden = false;
+        }
     });
 });
-
-closeButton.addEventListener("click", closePreview);
-
-lightbox.addEventListener("click", function (event) {
-    if (event.target === lightbox) {
-        closePreview();
-    }
-});
-
-document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape" && !lightbox.hidden) {
-        closePreview();
-    }
-});
-
